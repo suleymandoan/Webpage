@@ -16,7 +16,7 @@
         }
         .slider{
             position:relative;
-            max-width:800px;
+            max-width:800px;            
             margin:30px auto;
             overflow:hidden;
             border-radius:10px;
@@ -55,13 +55,21 @@
          
       </style>
   </head>
-  <body>
+  <body onload="countTimer()">
     <div class="slider">
         <div id="slides" class="slides">
-            <img src="1.png" alt="Slide1" >
-            <img src="2.png" alt="Slide2" >
-            <img src="3.jpeg" alt="Slide3">
-            <img src="4.jpeg" alt="Slide4">
+            <img src="1-1 kopya.jpg" alt="Slide1" >
+            <img src="2-2 kopya.jpg" alt="Slide2" >
+            <img src="3-3 kopya.jpg" alt="Slide3">
+            <img src="4-4 kopya.jpg" alt="Slide4">
+            <img src="5-5 olc kopya.jpg" alt="Slide5" >
+            <img src="6-6 olc kopya.jpg" alt="Slide6" >
+            <img src="7-7 kopya.jpg" alt="Slide7">
+            <img src="8-8 kopya.jpg" alt="Slide8">
+            <img src="9-9.jpg" alt="Slide9">
+           
+            
+            
 
             
         </div>
@@ -71,16 +79,18 @@
         <button onclick="nextSlide()"> > </button>
     </div>
     </div>
+    <div id="out"></div>
 
     <script>
         const slides=document.getElementById("slides");
         const totalSlides= slides.children.length;
         let index=0;
-
+        let index2=0;
+        
         function showSlides(i){
             index=(i+totalSlides) % totalSlides;
             slides.style.transform= `translateX(-${index*100}%) `;
-           
+            //document.getElementById("out").innerHTML = index;
 
         }
 
@@ -93,13 +103,30 @@
             showSlides(index-1);
             
         }
+
+        
+        function countTimer(){
+
+           if(index2<=totalSlides){
+             setInterval(deneme => {
+                    index2=index2+1;
+                    if(index2==totalSlides){
+                        index2=0;
+                    }
+                    document.getElementById("out").innerHTML = index2;
+                    showSlides(index2);
+                }, 3000);
+
+
+           }
+            
+        }
+
     </script>
     
 
   </body>
 
 </html>
-
-
 
 
