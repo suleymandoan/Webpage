@@ -3,7 +3,7 @@
   <head>
       
       <meta charset="UTF-8">
-      <title>Mutlu Yıllarr</title>
+      <title>İyi ki doğdunn</title>
       <style>
         *{
             box-sizing: border-box;
@@ -94,9 +94,9 @@
         </div>
          <div id="yazi" > 
             
-            <div id="out"></div>
-            
-              <div id="out2"></div>
+            <span id="out"></span>
+               <p> / </p>
+              <span id="out2"></span>
 
          </div>
             
@@ -148,12 +148,12 @@
                         index2=0;
                     }
                     if(tus==0){
-                        document.getElementById("out").innerHTML =  index2;
+                        document.getElementById("out").innerHTML =  index2+1;
                         showSlides(index2);
                     }
                     else if (tus==1){
                         index2=index;
-                        document.getElementById("out").innerHTML =index2;
+                        document.getElementById("out").innerHTML =index2+1;
                         showSlides(index2);
                         tus=0;
                     }
@@ -172,6 +172,7 @@
   </body>
 
 </html>
+
 
 
 
