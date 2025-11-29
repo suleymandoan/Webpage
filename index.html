@@ -3,7 +3,7 @@
   <head>
       
       <meta charset="UTF-8">
-      <title>Nice Seneleree</title>
+      <title>Responsive Image Slider</title>
       <style>
         *{
             box-sizing: border-box;
@@ -23,7 +23,7 @@
         }
         .slides{
             display:flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 1s ease;
             width:100%;
         }
 
@@ -31,6 +31,9 @@
             width: 100%;
             height: auto;
             flex-shrink: 0;
+            /*max-inline-size: 100%;*/
+
+            
         }
 
         .buttons{
@@ -52,19 +55,11 @@
             cursor: pointer;
 
         }
-        #out{
-          color:white;
-          
-        }
          
       </style>
   </head>
   <body onload="countTimer()">
-      
     <div class="slider">
-            <h3>İyi ki doğdunn Şulee</h3>
-            <h3>İyi ki hayatımdasınnn.</h3>
-            <h2>Seni Seviyorummmmmmmmmmmmmmmmm</h2>
         <div id="slides" class="slides">
             <img src="1-1 kopya.jpg" alt="Slide1" >
             <img src="2-2 kopya.jpg" alt="Slide2" >
@@ -72,18 +67,13 @@
             <img src="4-4 kopya.jpg" alt="Slide4">
             <img src="5-5 olc kopya.jpg" alt="Slide5" >
             <img src="6-6 olc kopya.jpg" alt="Slide6" >
-            <img src="9-9.jpg" alt="Slide9">
-            <img src="10 kopya.jpg" alt="Slide10">
-            <img src="11 kopya.jpg" alt="Slide11">
-            <img src="12 kopya.jpg" alt="Slide12">
-            <img src="13 kopya.jpg" alt="Slide13">
+            <img src="7-7 kopya.jpg" alt="Slide7">
+            <img src="8 kopya.jpg" alt="Slide8">
             
-             <img src="15 kopya.jpg" alt="Slide15">
-             <img src="16 kopya.jpg" alt="Slide16">
-             
+           
             
             
-            
+
             
         </div>
 
@@ -99,6 +89,7 @@
         const totalSlides= slides.children.length;
         let index=0;
         let index2=0;
+        let tus=0;
         
         function showSlides(i){
             index=(i+totalSlides) % totalSlides;
@@ -109,11 +100,18 @@
 
         function nextSlide(){
             showSlides(index+1);
-
+            tus=1;
+            
+            
+            
+        
         }
 
         function prevSlide(){
             showSlides(index-1);
+            tus=1;
+            //index=index-1;
+            
             
         }
 
@@ -126,8 +124,18 @@
                     if(index2==totalSlides){
                         index2=0;
                     }
-                    document.getElementById("out").innerHTML = index2;
-                    showSlides(index2);
+                    if(tus==0){
+                        document.getElementById("out").innerHTML = index2;
+                        showSlides(index2);
+                    }
+                    else if (tus==1){
+                        index2=index;
+                        document.getElementById("out").innerHTML = index2;
+                        showSlides(index2);
+                        tus=0;
+                    }
+                    
+                    
                 }, 3000);
 
 
@@ -141,15 +149,5 @@
   </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
