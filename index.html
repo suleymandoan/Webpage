@@ -139,7 +139,7 @@
 
         
         function countTimer(){
-           document.getElementById("out2").innerHTML = "Toplam Öge : " + totalSlides;
+           document.getElementById("out2").innerHTML =  totalSlides;
            if(index2<=totalSlides){
              setInterval(deneme => {
                     index2=index2+1;
@@ -147,12 +147,12 @@
                         index2=0;
                     }
                     if(tus==0){
-                        document.getElementById("out").innerHTML ="Bulunduğunuz Öge : " + index2;
+                        document.getElementById("out").innerHTML =  index2;
                         showSlides(index2);
                     }
                     else if (tus==1){
                         index2=index;
-                        document.getElementById("out").innerHTML = Bulunduğunuz Öge : " + index2;
+                        document.getElementById("out").innerHTML =index2;
                         showSlides(index2);
                         tus=0;
                     }
@@ -171,6 +171,7 @@
   </body>
 
 </html>
+
 
 
 
