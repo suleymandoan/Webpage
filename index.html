@@ -51,7 +51,8 @@
         .buttons button{
             background-color: rgba(0, 0,0, 0.5);;
             color: white;
-            border: none;
+            border: 0.5px;
+            border-color:#E2B59A;
             padding: 10px;
             font-size: 18px ;
             cursor: pointer;
@@ -63,11 +64,11 @@
           color:white;
         }
         #out{
-            font-size:20px;
+            font-size:16px;
             
         }
         #out2{
-            font-size:12px;
+            font-size:10px;
         }
          
       </style>
@@ -91,9 +92,9 @@
             
         </div>
          <div id="yazi" > 
-            <h2> Bulunduğunuz görsel </h2>
+            
             <div id="out"></div>
-             <h3>Toplam Görsel Sayısı</h3>
+            
               <div id="out2"></div>
 
          </div>
@@ -138,7 +139,7 @@
 
         
         function countTimer(){
-           document.getElementById("out2").innerHTML = totalSlides;
+           document.getElementById("out2").innerHTML = "Toplam Öge : " + totalSlides;
            if(index2<=totalSlides){
              setInterval(deneme => {
                     index2=index2+1;
@@ -146,12 +147,12 @@
                         index2=0;
                     }
                     if(tus==0){
-                        document.getElementById("out").innerHTML = index2;
+                        document.getElementById("out").innerHTML ="Bulunduğunuz Öge : " + index2;
                         showSlides(index2);
                     }
                     else if (tus==1){
                         index2=index;
-                        document.getElementById("out").innerHTML = index2;
+                        document.getElementById("out").innerHTML = Bulunduğunuz Öge : " + index2;
                         showSlides(index2);
                         tus=0;
                     }
@@ -170,6 +171,7 @@
   </body>
 
 </html>
+
 
 
 
