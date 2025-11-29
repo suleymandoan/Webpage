@@ -63,14 +63,9 @@
           text-align:center;
           background-color:rgba(149, 124, 98, 0.8);
           color:white;
+          font-size:16px;
         }
-        #out{
-            font-size:16px;
-            
-        }
-        #out2{
-            font-size:10px;
-        }
+       
          
       </style>
   </head>
@@ -95,7 +90,7 @@
          <div id="yazi" > 
             
             <span id="out"></span>
-               <p> / </p>
+               <span> / </span>
               <span id="out2"></span>
 
          </div>
@@ -141,11 +136,13 @@
         
         function countTimer(){
            document.getElementById("out2").innerHTML =  totalSlides;
+           document.getElementById("out").innerHTML =  index2+1;
            if(index2<=totalSlides){
              setInterval(deneme => {
                     index2=index2+1;
                     if(index2==totalSlides){
                         index2=0;
+                        //document.getElementById("out").innerHTML =  index2+1;
                     }
                     if(tus==0){
                         document.getElementById("out").innerHTML =  index2+1;
@@ -172,6 +169,7 @@
   </body>
 
 </html>
+
 
 
 
